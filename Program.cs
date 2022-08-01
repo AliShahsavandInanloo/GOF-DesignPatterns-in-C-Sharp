@@ -10,6 +10,27 @@ namespace DesignPatterns
             var editor  = new Editor();
             var history = new History();
 
+            var document = new MicrosoftWord();
+
+            document.Content  = "just some random content";
+            document.FontName = "monolith";
+            document.FontSize = 23;
+
+            var documentHistory = new DocumentHistory();
+
+
+            document.Content  = "i changed the document contents.";
+            document.FontName = "testFont";
+            document.FontSize = 54;
+            document.FontSize = 34;
+            document.FontSize = 334;
+
+            documentHistory.Push(document.CreateDocumentState());
+
+            document.RestoreDocumentState(documentHistory.Pop());
+
+            Console.WriteLine(document.FontSize);
+
             editor.Content = "a";
             history.Push(editor.CreateState());
 

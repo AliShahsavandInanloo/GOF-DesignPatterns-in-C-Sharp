@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Memento\DocumentHistory.cs" />
+    <Compile Include="Memento\DocumentState.cs" />
     <Compile Include="Memento\Editor.cs" />
     <Compile Include="Memento\EditorState.cs" />
     <Compile Include="Memento\History.cs" />
+    <Compile Include="Memento\MicrosoftWord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
