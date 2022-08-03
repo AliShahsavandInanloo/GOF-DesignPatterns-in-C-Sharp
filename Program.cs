@@ -1,4 +1,4 @@
-﻿using DesignPatterns.State;
+﻿using DesignPatterns.State.Exercise;
 
 namespace DesignPatterns
 {
@@ -47,15 +47,27 @@ namespace DesignPatterns
         //}
 
         // The State pattern
+        //private static void Main(string[] args)
+        //{
+        //    var canvas = new Canvas
+        //                 {
+        //                     CurrentTool = new Selection()
+        //                 };
+
+        //    canvas.MouseDown();
+        //    canvas.MouseUp();
+        //}
+
+        // The State pattern Exercise
         private static void Main(string[] args)
         {
-            var canvas = new Canvas
-                         {
-                             CurrentTool = new Selection()
-                         };
+            var directionService = new DirectionService
+                                   {
+                                       TravelMode = new Walking()
+                                   };
 
-            canvas.MouseDown();
-            canvas.MouseUp();
+            directionService.GetDirection();
+            directionService.GetEta();
         }
     }
 }
