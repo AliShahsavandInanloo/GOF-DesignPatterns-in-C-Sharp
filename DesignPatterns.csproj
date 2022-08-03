@@ -51,6 +51,12 @@
     <Compile Include="Memento\MicrosoftWord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="State\Brush.cs" />
+    <Compile Include="State\Canvas.cs" />
+    <Compile Include="State\Eraser.cs" />
+    <Compile Include="State\Selection.cs" />
+    <Compile Include="State\ITool.cs" />
+    <Compile Include="State\ToolType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 
 namespace DesignPatterns.Memento
 {
@@ -7,7 +7,8 @@ namespace DesignPatterns.Memento
     /// </summary>
     public class History
     {
-        private readonly ArrayList _states = new ArrayList(); // List of Mementos
+        private readonly List<EditorState>
+            _states = new List<EditorState>(); // List of Mementos (The Shell)
 
         public void Push(EditorState state) // Push Mementos in the shell
         {
@@ -21,7 +22,7 @@ namespace DesignPatterns.Memento
 
             this._states.Remove(lastState);
 
-            return lastState as EditorState;
+            return lastState;
         }
     }
 }
