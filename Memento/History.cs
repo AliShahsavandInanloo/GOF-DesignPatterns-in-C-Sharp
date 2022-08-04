@@ -7,22 +7,17 @@ namespace DesignPatterns.Memento
     /// </summary>
     public class History
     {
-        private readonly List<EditorState>
-            _states = new List<EditorState>(); // List of Mementos (The Shell)
+        private readonly Stack<EditorState>
+            _states = new Stack<EditorState>(); // List of Mementos (The Shell)
 
         public void Push(EditorState state) // Push Mementos in the shell
         {
-            this._states.Add(state);
+            this._states.Push(state);
         }
 
         public EditorState Pop() // Get the Mementos from the shell
         {
-            var lastIndex = this._states.Count - 1;
-            var lastState = this._states[lastIndex];
-
-            this._states.Remove(lastState);
-
-            return lastState;
+            return this._states.Pop();
         }
     }
 }
