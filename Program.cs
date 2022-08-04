@@ -1,5 +1,5 @@
 ﻿using System;
-using DesignPatterns.Iterator;
+using DesignPatterns.Iterator.Exercise;
 
 namespace DesignPatterns
 {
@@ -72,25 +72,44 @@ namespace DesignPatterns
         //}
 
         // The Iterator Pattern
+        //private static void Main(string[] args)
+        //{
+        //    var history = new BrowsHistory();
+        //    history.Push("a");
+        //    history.Push("b");
+        //    history.Push("c");
+
+        //    var iterator = history.CreateIterator();
+
+        //    while (iterator.HastNext())
+        //    {
+        //        var url = iterator.Current();
+        //        Console.WriteLine(url);
+        //        iterator.Next();
+        //    }
+
+        //    Console.WriteLine("-----------------------");
+        //    Console.WriteLine(history.Pop());
+        //    Console.WriteLine(history.Pop());
+        //}
+
+        // The Iterator Pattern Exercise
         private static void Main(string[] args)
         {
-            var history = new BrowsHistory();
-            history.Push("a");
-            history.Push("b");
-            history.Push("c");
+            var productCollection = new ProductCollection();
+            var productIterator   = productCollection.CreateIterator();
 
-            var iterator = history.CreateIterator();
+            productCollection.Push(new Product(1, "Book1"));
+            productCollection.Push(new Product(2, "Book2"));
+            productCollection.Push(new Product(3, "Book3"));
 
-            while (iterator.HastNext())
+
+            while (productIterator.HasNext())
             {
-                var url = iterator.Current();
-                Console.WriteLine(url);
-                iterator.Next();
-            }
+                Console.WriteLine(productIterator.Current().ToString());
 
-            Console.WriteLine("-----------------------");
-            Console.WriteLine(history.Pop());
-            Console.WriteLine(history.Pop());
+                productIterator.Next();
+            }
         }
     }
 }

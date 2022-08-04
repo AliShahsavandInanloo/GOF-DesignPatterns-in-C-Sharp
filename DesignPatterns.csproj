@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Iterator\BrowsHistory.cs" />
+    <Compile Include="Iterator\Exercise\IIterator.cs" />
+    <Compile Include="Iterator\Exercise\Product.cs" />
+    <Compile Include="Iterator\Exercise\ProductCollection.cs" />
     <Compile Include="Iterator\IIterator.cs" />
     <Compile Include="State\Exercise\Bicycling.cs" />
     <Compile Include="State\Exercise\DirectionService.cs" />
