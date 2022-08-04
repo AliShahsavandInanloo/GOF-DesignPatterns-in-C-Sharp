@@ -1,4 +1,5 @@
-﻿using DesignPatterns.State.Exercise;
+﻿using System;
+using DesignPatterns.Iterator;
 
 namespace DesignPatterns
 {
@@ -59,15 +60,37 @@ namespace DesignPatterns
         //}
 
         // The State pattern Exercise
+        //private static void Main(string[] args)
+        //{
+        //    var directionService = new DirectionService
+        //                           {
+        //                               TravelMode = new Walking()
+        //                           };
+
+        //    directionService.GetDirection();
+        //    directionService.GetEta();
+        //}
+
+        // The Iterator Pattern
         private static void Main(string[] args)
         {
-            var directionService = new DirectionService
-                                   {
-                                       TravelMode = new Walking()
-                                   };
+            var history = new BrowsHistory();
+            history.Push("a");
+            history.Push("b");
+            history.Push("c");
 
-            directionService.GetDirection();
-            directionService.GetEta();
+            var iterator = history.CreateIterator();
+
+            while (iterator.HastNext())
+            {
+                var url = iterator.Current();
+                Console.WriteLine(url);
+                iterator.Next();
+            }
+
+            Console.WriteLine("-----------------------");
+            Console.WriteLine(history.Pop());
+            Console.WriteLine(history.Pop());
         }
     }
 }

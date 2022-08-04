@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Iterator\BrowsHistory.cs" />
+    <Compile Include="Iterator\IIterator.cs" />
     <Compile Include="State\Exercise\Bicycling.cs" />
     <Compile Include="State\Exercise\DirectionService.cs" />
     <Compile Include="Memento\Exercise\DocumentHistory.cs" />
