@@ -1,5 +1,4 @@
-﻿using System;
-using DesignPatterns.Iterator.Exercise;
+﻿using DesignPatterns.Strategy;
 
 namespace DesignPatterns
 {
@@ -94,22 +93,30 @@ namespace DesignPatterns
         //}
 
         // The Iterator Pattern Exercise
+        //private static void Main(string[] args)
+        //{
+        //    var productCollection = new ProductCollection();
+        //    var productIterator   = productCollection.CreateIterator();
+
+        //    productCollection.Push(new Product(1, "Book1"));
+        //    productCollection.Push(new Product(2, "Book2"));
+        //    productCollection.Push(new Product(3, "Book3"));
+
+
+        //    while (productIterator.HasNext())
+        //    {
+        //        Console.WriteLine(productIterator.Current().ToString());
+
+        //        productIterator.Next();
+        //    }
+        //}
+
+        // The Strategy Pattern
         private static void Main(string[] args)
         {
-            var productCollection = new ProductCollection();
-            var productIterator   = productCollection.CreateIterator();
-
-            productCollection.Push(new Product(1, "Book1"));
-            productCollection.Push(new Product(2, "Book2"));
-            productCollection.Push(new Product(3, "Book3"));
-
-
-            while (productIterator.HasNext())
-            {
-                Console.WriteLine(productIterator.Current().ToString());
-
-                productIterator.Next();
-            }
+            var imageStorage = new ImageStorage();
+            imageStorage.Store("a", new JpegCompressor(), new BlackAndWhiteFilter());
+            imageStorage.Store("a", new PngCompressor(), new BlackAndWhiteFilter());
         }
     }
 }

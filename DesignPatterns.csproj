@@ -68,6 +68,12 @@
     <Compile Include="State\Selection.cs" />
     <Compile Include="State\ITool.cs" />
     <Compile Include="State\ToolType.cs" />
+    <Compile Include="Strategy\BlackAndWhiteFilter.cs" />
+    <Compile Include="Strategy\ICompressor.cs" />
+    <Compile Include="Strategy\IFilter.cs" />
+    <Compile Include="Strategy\ImageStorage.cs" />
+    <Compile Include="Strategy\JpegCompressor.cs" />
+    <Compile Include="Strategy\PngCompressor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
