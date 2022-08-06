@@ -1,4 +1,4 @@
-﻿using DesignPatterns.Strategy.Exercise;
+﻿using DesignPatterns.TemplateMethod;
 
 namespace DesignPatterns
 {
@@ -120,10 +120,17 @@ namespace DesignPatterns
         //}
 
         // The Strategy Pattern Exercise
+        //private static void Main(string[] args)
+        //{
+        //    var chatClient = new ChatClient();
+        //    chatClient.Send("This is a test message.", new Des());
+        //}
+
+        // The Template Method pattern
         private static void Main(string[] args)
         {
-            var chatClient = new ChatClient();
-            chatClient.Send("This is a test message.", new Des());
+            var task = new TransferMoneyTask();
+            task.Execute();
         }
     }
 }
