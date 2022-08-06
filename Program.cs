@@ -1,4 +1,4 @@
-﻿using DesignPatterns.Strategy;
+﻿using DesignPatterns.Strategy.Exercise;
 
 namespace DesignPatterns
 {
@@ -111,12 +111,19 @@ namespace DesignPatterns
         //    }
         //}
 
-        // The Strategy Pattern
+        //// The Strategy Pattern
+        //private static void Main(string[] args)
+        //{
+        //    var imageStorage = new ImageStorage();
+        //    imageStorage.Store("a", new JpegCompressor(), new BlackAndWhiteFilter());
+        //    imageStorage.Store("a", new PngCompressor(), new BlackAndWhiteFilter());
+        //}
+
+        // The Strategy Pattern Exercise
         private static void Main(string[] args)
         {
-            var imageStorage = new ImageStorage();
-            imageStorage.Store("a", new JpegCompressor(), new BlackAndWhiteFilter());
-            imageStorage.Store("a", new PngCompressor(), new BlackAndWhiteFilter());
+            var chatClient = new ChatClient();
+            chatClient.Send("This is a test message.", new Des());
         }
     }
 }
