@@ -1,4 +1,5 @@
-﻿using DesignPatterns.TemplateMethod.Exercise;
+﻿using DesignPatterns.Command;
+using DesignPatterns.Command.fx;
 
 namespace DesignPatterns
 {
@@ -137,10 +138,20 @@ namespace DesignPatterns
         //}
 
         // The Template Method pattern Exercise
+        //private static void Main(string[] args)
+        //{
+        //    var window = new ChatWindow();
+        //    window.Close();
+        //}
+
+        // The Command pattern
         private static void Main(string[] args)
         {
-            var window = new ChatWindow();
-            window.Close();
+            var service = new CustomerService();
+            var command = new AddCustomerCommand(service);
+            var button  = new Button(command);
+
+            button.Click();
         }
     }
 }

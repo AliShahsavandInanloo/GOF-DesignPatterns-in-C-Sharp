@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\AddCustomerCommand.cs" />
+    <Compile Include="Command\fx\Button.cs" />
+    <Compile Include="Command\CustomerService.cs" />
+    <Compile Include="Command\fx\ICommand.cs" />
     <Compile Include="Iterator\BrowsHistory.cs" />
     <Compile Include="Iterator\Exercise\IIterator.cs" />
     <Compile Include="Iterator\Exercise\Product.cs" />
