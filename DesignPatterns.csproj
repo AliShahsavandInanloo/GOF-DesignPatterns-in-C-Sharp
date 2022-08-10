@@ -46,6 +46,12 @@
     <Compile Include="Command\AddCustomerCommand.cs" />
     <Compile Include="Command\BlackAndWhiteCommand.cs" />
     <Compile Include="Command\CompositeCommand.cs" />
+    <Compile Include="Command\Editor\BoldCommand.cs" />
+    <Compile Include="Command\Editor\History.cs" />
+    <Compile Include="Command\Editor\HtmlDocument.cs" />
+    <Compile Include="Command\Editor\ICommand.cs" />
+    <Compile Include="Command\Editor\IUndoableCommand.cs" />
+    <Compile Include="Command\Editor\UndoCommand.cs" />
     <Compile Include="Command\fx\Button.cs" />
     <Compile Include="Command\CustomerService.cs" />
     <Compile Include="Command\fx\ICommand.cs" />

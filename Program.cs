@@ -1,6 +1,5 @@
 ﻿using System;
-using DesignPatterns.Command;
-using DesignPatterns.Command.fx;
+using DesignPatterns.Command.Editor;
 
 namespace DesignPatterns
 {
@@ -146,21 +145,40 @@ namespace DesignPatterns
         //}
 
         // The Command pattern
+        //private static void Main(string[] args)
+        //{
+        //    var service = new CustomerService();
+        //    var command = new AddCustomerCommand(service);
+        //    var button  = new Button(command);
+
+        //    button.Click();
+
+        //    for (var i = 0; i < 20; i++) Console.Write("*");
+        //    Console.WriteLine();
+
+        //    var composite = new CompositeCommand();
+        //    composite.Add(new ResizeCommand());
+        //    composite.Add(new BlackAndWhiteCommand());
+        //    composite.Execute();
+        //}
+
+        // The Undo Mechanism with Command Pattern
         private static void Main(string[] args)
         {
-            var service = new CustomerService();
-            var command = new AddCustomerCommand(service);
-            var button  = new Button(command);
+            var history = new History();
+            var document = new HtmlDocument
+                           {
+                               Content = "Hello World"
+                           };
+            var boldCommand = new BoldCommand(document, history);
 
-            button.Click();
+            boldCommand.Execute();
+            Console.WriteLine(document.Content);
 
-            for (var i = 0; i < 20; i++) Console.Write("*");
-            Console.WriteLine();
+            var undoCommand = new UndoCommand(history);
+            undoCommand.Execute();
 
-            var composite = new CompositeCommand();
-            composite.Add(new ResizeCommand());
-            composite.Add(new BlackAndWhiteCommand());
-            composite.Execute();
+            Console.WriteLine(document.Content);
         }
     }
 }
