@@ -129,7 +129,10 @@ namespace DesignPatterns
         // The Template Method pattern
         private static void Main(string[] args)
         {
-            var task = new TransferMoneyTask();
+            var task  = new TransferMoneyTask();
+            var task2 = new GenerateReportTask();
+
+            task2.Execute();
             task.Execute();
         }
     }

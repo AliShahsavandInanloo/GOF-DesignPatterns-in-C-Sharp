@@ -2,19 +2,13 @@
 
 namespace DesignPatterns.TemplateMethod
 {
-    public class GenerateReportTask
+    public class GenerateReportTask : Task
     {
         private readonly AuditTrail _auditTrail;
 
-        public GenerateReportTask(AuditTrail auditTrail)
-        {
-            this._auditTrail = auditTrail;
-        }
 
-        public void Execute()
+        protected override void DoExecute()
         {
-            this._auditTrail.Record();
-
             Console.WriteLine("Generate Report");
         }
     }
