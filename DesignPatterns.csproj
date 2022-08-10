@@ -79,9 +79,11 @@
     <Compile Include="Strategy\JpegCompressor.cs" />
     <Compile Include="Strategy\PngCompressor.cs" />
     <Compile Include="TemplateMethod\AuditTrail.cs" />
+    <Compile Include="TemplateMethod\Exercise\ChatWindow.cs" />
     <Compile Include="TemplateMethod\GenerateReportTask.cs" />
     <Compile Include="TemplateMethod\Task.cs" />
     <Compile Include="TemplateMethod\TransferMoneyTask.cs" />
+    <Compile Include="TemplateMethod\Exercise\Window.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

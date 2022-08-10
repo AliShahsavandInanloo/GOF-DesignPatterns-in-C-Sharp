@@ -1,4 +1,4 @@
-﻿using DesignPatterns.TemplateMethod;
+﻿using DesignPatterns.TemplateMethod.Exercise;
 
 namespace DesignPatterns
 {
@@ -127,13 +127,20 @@ namespace DesignPatterns
         //}
 
         // The Template Method pattern
+        //private static void Main(string[] args)
+        //{
+        //    var task  = new TransferMoneyTask();
+        //    var task2 = new GenerateReportTask();
+
+        //    task2.Execute();
+        //    task.Execute();
+        //}
+
+        // The Template Method pattern Exercise
         private static void Main(string[] args)
         {
-            var task  = new TransferMoneyTask();
-            var task2 = new GenerateReportTask();
-
-            task2.Execute();
-            task.Execute();
+            var window = new ChatWindow();
+            window.Close();
         }
     }
 }
