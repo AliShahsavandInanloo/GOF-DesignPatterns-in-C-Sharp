@@ -44,9 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\AddCustomerCommand.cs" />
+    <Compile Include="Command\BlackAndWhiteCommand.cs" />
+    <Compile Include="Command\CompositeCommand.cs" />
     <Compile Include="Command\fx\Button.cs" />
     <Compile Include="Command\CustomerService.cs" />
     <Compile Include="Command\fx\ICommand.cs" />
+    <Compile Include="Command\ResizeCommand.cs" />
     <Compile Include="Iterator\BrowsHistory.cs" />
     <Compile Include="Iterator\Exercise\IIterator.cs" />
     <Compile Include="Iterator\Exercise\Product.cs" />

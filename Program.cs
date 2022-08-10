@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Command;
+﻿using System;
+using DesignPatterns.Command;
 using DesignPatterns.Command.fx;
 
 namespace DesignPatterns
@@ -152,6 +153,14 @@ namespace DesignPatterns
             var button  = new Button(command);
 
             button.Click();
+
+            for (var i = 0; i < 20; i++) Console.Write("*");
+            Console.WriteLine();
+
+            var composite = new CompositeCommand();
+            composite.Add(new ResizeCommand());
+            composite.Add(new BlackAndWhiteCommand());
+            composite.Execute();
         }
     }
 }
