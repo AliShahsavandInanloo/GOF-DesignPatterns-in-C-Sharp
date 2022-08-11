@@ -16,7 +16,12 @@ namespace DesignPatterns.Observer
             this._observers.Remove(observer);
         }
 
-        public void NotifyObservers()
+        //public void NotifyObservers(int value) // the push style
+        //{
+        //    foreach (var observer in this._observers) observer.Update(value);
+        //}
+
+        public void NotifyObservers() // the pull style
         {
             foreach (var observer in this._observers) observer.Update();
         }

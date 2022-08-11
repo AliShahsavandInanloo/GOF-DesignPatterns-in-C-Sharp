@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Observer
 {
-    internal class DataSource : Subject
+    public class DataSource : Subject
     {
         private int _value;
 
@@ -10,7 +10,8 @@
             set
             {
                 this._value = value;
-                NotifyObservers();
+                //NotifyObservers(this._value);// the push style
+                NotifyObservers(); // the pull style
             }
         }
     }
