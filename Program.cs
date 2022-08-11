@@ -1,5 +1,4 @@
-﻿using System;
-using DesignPatterns.Command.Editor;
+﻿using DesignPatterns.Observer;
 
 namespace DesignPatterns
 {
@@ -163,22 +162,37 @@ namespace DesignPatterns
         //}
 
         // The Undo Mechanism with Command Pattern
+        //private static void Main(string[] args)
+        //{
+        //    var history = new History();
+        //    var document = new HtmlDocument
+        //                   {
+        //                       Content = "Hello World"
+        //                   };
+        //    var boldCommand = new BoldCommand(document, history);
+
+        //    boldCommand.Execute();
+        //    Console.WriteLine(document.Content);
+
+        //    var undoCommand = new UndoCommand(history);
+        //    undoCommand.Execute();
+
+        //    Console.WriteLine(document.Content);
+        //}
+
+        // The Observer Pattern
         private static void Main(string[] args)
         {
-            var history = new History();
-            var document = new HtmlDocument
-                           {
-                               Content = "Hello World"
-                           };
-            var boldCommand = new BoldCommand(document, history);
+            var dataSource = new DataSource();
+            var sheet1     = new SpreadSheet();
+            var sheet2     = new SpreadSheet();
+            var chart      = new Chart();
 
-            boldCommand.Execute();
-            Console.WriteLine(document.Content);
+            dataSource.AddObserver(sheet1);
+            dataSource.AddObserver(sheet2);
+            dataSource.AddObserver(chart);
 
-            var undoCommand = new UndoCommand(history);
-            undoCommand.Execute();
-
-            Console.WriteLine(document.Content);
+            dataSource.Value = 1;
         }
     }
 }
