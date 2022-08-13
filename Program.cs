@@ -1,4 +1,4 @@
-﻿using DesignPatterns.Observer;
+﻿using DesignPatterns.Observer.Exercise;
 
 namespace DesignPatterns
 {
@@ -181,18 +181,39 @@ namespace DesignPatterns
         //}
 
         // The Observer Pattern
+        //private static void Main(string[] args)
+        //{
+        //    var dataSource = new DataSource();
+        //    var sheet1     = new SpreadSheet(dataSource);
+        //    var sheet2     = new SpreadSheet(dataSource);
+        //    var chart      = new Chart(dataSource);
+
+        //    dataSource.AddObserver(sheet1);
+        //    dataSource.AddObserver(sheet2);
+        //    dataSource.AddObserver(chart);
+
+        //    dataSource.Value = 1;
+        //}
+
+        // The Observer Pattern Exercise
         private static void Main(string[] args)
         {
-            var dataSource = new DataSource();
-            var sheet1     = new SpreadSheet(dataSource);
-            var sheet2     = new SpreadSheet(dataSource);
-            var chart      = new Chart(dataSource);
+            var statusBar     = new StatusBar();
+            var stockListView = new StockListView();
 
-            dataSource.AddObserver(sheet1);
-            dataSource.AddObserver(sheet2);
-            dataSource.AddObserver(chart);
+            var stock1 = new Stock("stock1", 10);
+            var stock2 = new Stock("stock2", 20);
+            var stock3 = new Stock("stock3", 30);
 
-            dataSource.Value = 1;
+            statusBar.AddStock(stock1);
+            statusBar.AddStock(stock2);
+
+            stockListView.AddStock(stock1);
+            stockListView.AddStock(stock2);
+            stockListView.AddStock(stock3);
+
+            stock2.Price = 21;
+            stock3.Price = 9;
         }
     }
 }

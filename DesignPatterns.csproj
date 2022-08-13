@@ -63,6 +63,10 @@
     <Compile Include="Iterator\IIterator.cs" />
     <Compile Include="Observer\Chart.cs" />
     <Compile Include="Observer\DataSource.cs" />
+    <Compile Include="Observer\Exercise\IObserver.cs" />
+    <Compile Include="Observer\Exercise\StatusBar.cs" />
+    <Compile Include="Observer\Exercise\Stock.cs" />
+    <Compile Include="Observer\Exercise\StockListView.cs" />
     <Compile Include="Observer\IObserver.cs" />
     <Compile Include="Observer\SpreadSheet.cs" />
     <Compile Include="Observer\Subject.cs" />
