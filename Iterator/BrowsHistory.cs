@@ -21,10 +21,16 @@ namespace DesignPatterns.Iterator
             return lastUrl;
         }
 
+        public IEnumerable<string> CreateEnumerable()
+        {
+            return this.Urls;
+        }
+
         public IIterator<string> CreateIterator()
         {
             return new ListIterator(this);
         }
+
 
         public class ListIterator : IIterator<string>
         {

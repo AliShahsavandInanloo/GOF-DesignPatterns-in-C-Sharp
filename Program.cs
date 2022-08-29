@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Observer.Exercise;
+﻿using System;
+using DesignPatterns.Command.Exercise;
 
 namespace DesignPatterns
 {
@@ -180,6 +181,33 @@ namespace DesignPatterns
         //    Console.WriteLine(document.Content);
         //}
 
+        // The Command Pattern Exercise
+        private static void Main(string[] args)
+        {
+            var videoEditor = new VideoEditor {Text = "Hello World!"};
+            var history     = new History();
+
+            var changeTextCommand     = new ChangeTextCommand(videoEditor, history, "Hello");
+            var changeContrastCommand = new ChangeContrastCommand(videoEditor, history, 10f);
+
+            changeTextCommand.Execute();
+            Console.WriteLine(videoEditor);
+
+            changeContrastCommand.Execute();
+            changeContrastCommand.Execute();
+
+            var undoCommand = new UndoCommand(history);
+
+            undoCommand.Execute();
+            Console.WriteLine(videoEditor);
+
+            undoCommand.Execute();
+            Console.WriteLine(videoEditor);
+
+            undoCommand.Execute();
+            Console.WriteLine(videoEditor);
+        }
+
         // The Observer Pattern
         //private static void Main(string[] args)
         //{
@@ -196,24 +224,24 @@ namespace DesignPatterns
         //}
 
         // The Observer Pattern Exercise
-        private static void Main(string[] args)
-        {
-            var statusBar     = new StatusBar();
-            var stockListView = new StockListView();
-
-            var stock1 = new Stock("stock1", 10);
-            var stock2 = new Stock("stock2", 20);
-            var stock3 = new Stock("stock3", 30);
-
-            statusBar.AddStock(stock1);
-            statusBar.AddStock(stock2);
-
-            stockListView.AddStock(stock1);
-            stockListView.AddStock(stock2);
-            stockListView.AddStock(stock3);
-
-            stock2.Price = 21;
-            stock3.Price = 9;
-        }
+//        private static void Main(string[] args)
+//        {
+//            var statusBar     = new StatusBar();
+//            var stockListView = new StockListView();
+//
+//            var stock1 = new Stock("stock1", 10);
+//            var stock2 = new Stock("stock2", 20);
+//            var stock3 = new Stock("stock3", 30);
+//
+//            statusBar.AddStock(stock1);
+//            statusBar.AddStock(stock2);
+//
+//            stockListView.AddStock(stock1);
+//            stockListView.AddStock(stock2);
+//            stockListView.AddStock(stock3);
+//
+//            stock2.Price = 21;
+//            stock3.Price = 9;
+//        }
     }
 }
