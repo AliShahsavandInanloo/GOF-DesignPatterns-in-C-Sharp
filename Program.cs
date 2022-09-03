@@ -1,5 +1,6 @@
 ﻿using System;
 using DesignPatterns.Command.Exercise;
+using DesignPatterns.Mediator;
 
 namespace DesignPatterns
 {
@@ -182,31 +183,31 @@ namespace DesignPatterns
         //}
 
         // The Command Pattern Exercise
-        private static void Main(string[] args)
-        {
-            var videoEditor = new VideoEditor {Text = "Hello World!"};
-            var history     = new History();
-
-            var changeTextCommand     = new ChangeTextCommand(videoEditor, history, "Hello");
-            var changeContrastCommand = new ChangeContrastCommand(videoEditor, history, 10f);
-
-            changeTextCommand.Execute();
-            Console.WriteLine(videoEditor);
-
-            changeContrastCommand.Execute();
-            changeContrastCommand.Execute();
-
-            var undoCommand = new UndoCommand(history);
-
-            undoCommand.Execute();
-            Console.WriteLine(videoEditor);
-
-            undoCommand.Execute();
-            Console.WriteLine(videoEditor);
-
-            undoCommand.Execute();
-            Console.WriteLine(videoEditor);
-        }
+//        private static void Main(string[] args)
+//        {
+//            var videoEditor = new VideoEditor {Text = "Hello World!"};
+//            var history     = new History();
+//
+//            var changeTextCommand     = new ChangeTextCommand(videoEditor, history, "Hello");
+//            var changeContrastCommand = new ChangeContrastCommand(videoEditor, history, 10f);
+//
+//            changeTextCommand.Execute();
+//            Console.WriteLine(videoEditor);
+//
+//            changeContrastCommand.Execute();
+//            changeContrastCommand.Execute();
+//
+//            var undoCommand = new UndoCommand(history);
+//
+//            undoCommand.Execute();
+//            Console.WriteLine(videoEditor);
+//
+//            undoCommand.Execute();
+//            Console.WriteLine(videoEditor);
+//
+//            undoCommand.Execute();
+//            Console.WriteLine(videoEditor);
+//        }
 
         // The Observer Pattern
         //private static void Main(string[] args)
@@ -243,5 +244,11 @@ namespace DesignPatterns
 //            stock2.Price = 21;
 //            stock3.Price = 9;
 //        }
+// The Mediator Pattern
+        private static void Main(string[] args)
+        {
+            var dialog = new ArticleDialogBox();
+            dialog.SimulateUserInteraction();
+        }
     }
 }
