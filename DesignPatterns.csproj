@@ -43,6 +43,12 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="ChainOfResponsibility\Authenticator.cs" />
+        <Compile Include="ChainOfResponsibility\Compressor.cs" />
+        <Compile Include="ChainOfResponsibility\Handler.cs" />
+        <Compile Include="ChainOfResponsibility\HttpRequest.cs" />
+        <Compile Include="ChainOfResponsibility\Logger.cs" />
+        <Compile Include="ChainOfResponsibility\WebServer.cs" />
         <Compile Include="Command\AddCustomerCommand.cs" />
         <Compile Include="Command\BlackAndWhiteCommand.cs" />
         <Compile Include="Command\CompositeCommand.cs" />

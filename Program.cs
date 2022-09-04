@@ -1,6 +1,4 @@
-﻿using System;
-using DesignPatterns.Command.Exercise;
-using DesignPatterns.Mediator;
+﻿using DesignPatterns.ChainOfResponsibility;
 
 namespace DesignPatterns
 {
@@ -244,11 +242,22 @@ namespace DesignPatterns
 //            stock2.Price = 21;
 //            stock3.Price = 9;
 //        }
-// The Mediator Pattern
+//      The Mediator Pattern
+//        private static void Main(string[] args)
+//        {
+//            var dialog = new ArticleDialogBox();
+//            dialog.SimulateUserInteraction();
+//        }
+//      The Chain of Responsibility Pattern
         private static void Main(string[] args)
         {
-            var dialog = new ArticleDialogBox();
-            dialog.SimulateUserInteraction();
+            // authenticator -> logger -> compressor
+            var compressor    = new Compressor(null);
+            var logger        = new Logger(compressor);
+            var authenticator = new Authenticator(logger);
+            var webServer     = new WebServer(authenticator);
+
+            webServer.Handle(new HttpRequest("admin", "1234"));
         }
     }
 }
