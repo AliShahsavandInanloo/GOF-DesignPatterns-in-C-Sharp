@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace DesignPatterns.Visitor
+﻿namespace DesignPatterns.Visitor
 {
     public class AnchorNode : IHtmlNode
     {
-        public void HighLight()
+        public void Execute(IOperation operation)
         {
-            Console.WriteLine("highlight-anchor");
+            operation.Apply(this);
         }
     }
 }

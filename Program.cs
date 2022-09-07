@@ -267,8 +267,9 @@ namespace DesignPatterns
             var document = new HtmlDocument();
             document.Add(new HeadingNode());
             document.Add(new AnchorNode());
-            
-            document.HighLight();
+
+//            document.Execute(new HighLightOperation());
+            document.Execute(new PlainTextOperation());
         }
     }
 }

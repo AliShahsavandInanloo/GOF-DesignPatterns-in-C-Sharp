@@ -11,12 +11,9 @@ namespace DesignPatterns.Visitor
             this._nodes.Add(node);
         }
 
-        public void HighLight()
+        public void Execute(IOperation operation)
         {
-            foreach (var node in this._nodes)
-            {
-                node.HighLight();
-            }
+            foreach (var node in this._nodes) node.Execute(operation);
         }
     }
 }

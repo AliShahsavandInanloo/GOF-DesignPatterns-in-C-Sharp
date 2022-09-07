@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace DesignPatterns.Visitor
+﻿namespace DesignPatterns.Visitor
 {
     public class HeadingNode : IHtmlNode
     {
-        public void HighLight()
+        public void Execute(IOperation operation)
         {
-            Console.WriteLine("highlight-heading");
+            operation.Apply(this);
         }
     }
 }

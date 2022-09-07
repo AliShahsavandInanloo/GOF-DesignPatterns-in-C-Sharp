@@ -127,8 +127,11 @@
         <Compile Include="TemplateMethod\Exercise\Window.cs" />
         <Compile Include="Visitor\AnchorNode.cs" />
         <Compile Include="Visitor\HeadingNode.cs" />
+        <Compile Include="Visitor\HighLightOperation.cs" />
         <Compile Include="Visitor\HtmlDocument.cs" />
         <Compile Include="Visitor\HtmlNode.cs" />
+        <Compile Include="Visitor\IOperation.cs" />
+        <Compile Include="Visitor\PlainTextOperation.cs" />
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
