@@ -1,4 +1,4 @@
-﻿using DesignPatterns.ChainOfResponsibility;
+﻿using DesignPatterns.Visitor;
 
 namespace DesignPatterns
 {
@@ -248,16 +248,27 @@ namespace DesignPatterns
 //            var dialog = new ArticleDialogBox();
 //            dialog.SimulateUserInteraction();
 //        }
-//      The Chain of Responsibility Pattern
+
+//       The Chain of Responsibility Pattern
+//        private static void Main(string[] args)
+//        {
+//            // authenticator -> logger -> compressor
+//            var compressor    = new Compressor(null);
+//            var logger        = new Logger(compressor);
+//            var authenticator = new Authenticator(logger);
+//            var webServer     = new WebServer(authenticator);
+//
+//            webServer.Handle(new HttpRequest("admin", "1234"));
+//        }
+
+//      The Visitor Pattern
         private static void Main(string[] args)
         {
-            // authenticator -> logger -> compressor
-            var compressor    = new Compressor(null);
-            var logger        = new Logger(compressor);
-            var authenticator = new Authenticator(logger);
-            var webServer     = new WebServer(authenticator);
-
-            webServer.Handle(new HttpRequest("admin", "1234"));
+            var document = new HtmlDocument();
+            document.Add(new HeadingNode());
+            document.Add(new AnchorNode());
+            
+            document.HighLight();
         }
     }
 }

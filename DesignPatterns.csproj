@@ -125,6 +125,10 @@
         <Compile Include="TemplateMethod\Task.cs" />
         <Compile Include="TemplateMethod\TransferMoneyTask.cs" />
         <Compile Include="TemplateMethod\Exercise\Window.cs" />
+        <Compile Include="Visitor\AnchorNode.cs" />
+        <Compile Include="Visitor\HeadingNode.cs" />
+        <Compile Include="Visitor\HtmlDocument.cs" />
+        <Compile Include="Visitor\HtmlNode.cs" />
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
